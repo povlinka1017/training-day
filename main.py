@@ -120,3 +120,5 @@ def solution(s: str):
     #return s_list
 
 print(solution("breakCamelCase"))
+print(solution("breakCamelCase"))
+
