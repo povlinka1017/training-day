@@ -108,17 +108,35 @@ def delete_nth(order: list, max_e: int):
 # print(delete_nth([1, 2, 3, 1, 1, 2, 1, 2, 3, 3, 2, 4, 5, 3, 1], 3))
 
 
-def solution(s: str):
+def solution(s: str) -> str:
     s_list: list[str] = list(s)
-    res = []
+    l: list = []
     for item in s_list:
-        index = s_list.index(item)
         if item.isupper():
-            print(index)
-            s_list.insert(index, ' ')
+            l.append(' ')
+        l.append(item)
 
-    #return s_list
+    res: str = ''.join(map(str, l))
+    return res
 
-print(solution("breakCamelCase"))
-print(solution("breakCamelCase"))
+# print(solution("camelCase"))
+# print(solution("breakCamelCase"))
+
+
+def pig_it(text: str) -> str:
+    text_array: list[str] = text.split(' ')
+    # print(f'Text array - {text_array}')
+    out: list = []
+    for word in text_array:
+        # print(f'Iter of word - {word}')
+        if word in string.punctuation:
+            out.append(word)
+        else:
+            out.append(word[1:] + word[0] + 'ay')
+
+    return ' '.join(map(str, out))
+
+print(pig_it('12345 456789 !'))
+print(pig_it('Pig latin is cool')) #
+print(pig_it('This is my string'))
 
