@@ -1,8 +1,12 @@
+from __future__ import annotations
+
+
 def move_zeros(lst: list):
     """
     Write an algorithm that:
     - takes an array
-    - moves all of the zeros to the end, preserving the order of the other elements.
+    - moves all of the zeros to the end,
+      preserving the order of the other elements.
     :param lst:
     :return: list
     """
@@ -10,7 +14,8 @@ def move_zeros(lst: list):
     nulls: list = [i for i in lst if i == 0]
     return non_zero + nulls
 
-#print(move_zeros([9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9]))
+
+move_zeros([9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9])
 
 
 def expanded_form(num: int):
@@ -23,5 +28,6 @@ def expanded_form(num: int):
             place_value = digit * 10 ** (len(num_list) - index - 1)
             lst.append(str(place_value))
     return ' + '.join(map(str, lst))
+
 
 print(expanded_form(10020062))

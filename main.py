@@ -1,10 +1,12 @@
+from __future__ import annotations
+
 import string
-import json
+
 
 def square_sum(numbers: list) -> int:
     res: list[int] = []
     for num in numbers:
-        x = num ** 2
+        x = num**2
         res.append(x)
     return sum(res)
 
@@ -62,13 +64,19 @@ def open_or_senior(data: list):
 
 
 def is_pangram(sentence: str):
-    s: str = sentence.lower().replace(string.whitespace, '').replace('.','').replace(',','')
+    s: str = (
+        sentence.lower()
+        .replace(string.whitespace, '')
+        .replace('.', '')
+        .replace(',', '')
+    )
     char_list = list(s)
 
     for char in list(string.ascii_lowercase):
         if char not in char_list:
             return False
     return True
+
 
 # print(is_pangram('abcdefghijklm opqrstuvwxyz'))
 
@@ -89,9 +97,10 @@ def find_even_index(arr: list):
     '''
 
     for i in range(len(arr)):
-        if sum(arr[:i]) == sum(arr[i+1:]):
+        if sum(arr[:i]) == sum(arr[i + 1 :]):
             return i
     return -1
+
 
 # print(find_even_index([1,100,50,-51,1,1]))
 
@@ -104,6 +113,7 @@ def delete_nth(order: list, max_e: int):
             res.append(i)
 
     return res
+
 
 # print(delete_nth([1, 2, 3, 1, 1, 2, 1, 2, 3, 3, 2, 4, 5, 3, 1], 3))
 
@@ -118,6 +128,7 @@ def solution(s: str) -> str:
 
     res: str = ''.join(map(str, l))
     return res
+
 
 # print(solution("camelCase"))
 # print(solution("breakCamelCase"))
@@ -136,7 +147,7 @@ def pig_it(text: str) -> str:
 
     return ' '.join(map(str, out))
 
-print(pig_it('12345 456789 !'))
-print(pig_it('Pig latin is cool')) #
-print(pig_it('This is my string'))
 
+print(pig_it('12345 456789 !'))
+print(pig_it('Pig latin is cool'))  #
+print(pig_it('This is my string'))
