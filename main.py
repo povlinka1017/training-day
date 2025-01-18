@@ -149,5 +149,4 @@ def pig_it(text: str) -> str:
 
 
 print(pig_it('12345 456789 !'))
-print(pig_it('Pig latin is cool'))  #
 print(pig_it('This is my string'))
